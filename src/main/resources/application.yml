@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Unoffimap
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 1234qwer
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: a63a7454f62f634fc6b105b257bfc4454b07ec94cfbcf7844b810773a2fa11c6
+  expiration: 900000
